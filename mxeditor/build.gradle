@@ -4,11 +4,11 @@ plugins {
 
 android {
     namespace 'com.smartspiritnotes.mxeditor'
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         minSdk 26
-        targetSdk 33
+        targetSdk 32
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -19,10 +19,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
