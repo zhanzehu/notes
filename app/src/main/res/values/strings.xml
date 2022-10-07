@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">notes</string>
     <string name="app_repo">https://github.com/zhanzehu/notes</string>
+    <string name="edit_note">编辑笔记</string>
 
     <!-- Menu -->
     <string name="menu_undo">Undo</string>
