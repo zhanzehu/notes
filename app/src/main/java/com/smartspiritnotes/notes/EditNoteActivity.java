@@ -45,7 +45,7 @@ public class EditNoteActivity extends Activity {
         setContentView(R.layout.activity_edit_note);
 
         //获取MXText元素,用于改变文本
-        mxText = (MXText)findViewById(R.id.mxText);
+        mxText = findViewById(R.id.mxText);
         // ImageGetter coming soon...
         //将EXAMPLE转换成Html
         mxText.fromHtml(EXAMPLE);
@@ -67,164 +67,106 @@ public class EditNoteActivity extends Activity {
     //设置粗体按钮
     private void setupBold() {
         //获取粗体控件
-        ImageButton bold = (ImageButton) findViewById(R.id.bold);
+        ImageButton bold = findViewById(R.id.bold);
 
         //设置粗体控件的监听事件
-        bold.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //精华
-                mxText.bold(!mxText.contains(MXText.FORMAT_BOLD));
-            }
+        bold.setOnClickListener(v -> {
+            //精华
+            mxText.bold(!mxText.contains(MXText.FORMAT_BOLD));
         });
 
         //设置粗体的长按的监听事件
-        bold.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                //打印log
-                Toast.makeText(EditNoteActivity.this, R.string.toast_bold, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        bold.setOnLongClickListener(v -> {
+            //打印log
+            Toast.makeText(EditNoteActivity.this, R.string.toast_bold, Toast.LENGTH_SHORT).show();
+            return true;
         });
     }
 
     private void setupItalic() {
-        ImageButton italic = (ImageButton) findViewById(R.id.italic);
+        ImageButton italic = findViewById(R.id.italic);
 
-        italic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mxText.italic(!mxText.contains(MXText.FORMAT_ITALIC));
-            }
-        });
+        italic.setOnClickListener(v -> mxText.italic(!mxText.contains(MXText.FORMAT_ITALIC)));
 
-        italic.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(EditNoteActivity.this, R.string.toast_italic, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        italic.setOnLongClickListener(v -> {
+            Toast.makeText(EditNoteActivity.this, R.string.toast_italic, Toast.LENGTH_SHORT).show();
+            return true;
         });
     }
 
     private void setupUnderline() {
-        ImageButton underline = (ImageButton) findViewById(R.id.underline);
+        ImageButton underline = findViewById(R.id.underline);
 
-        underline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mxText.underline(!mxText.contains(MXText.FORMAT_UNDERLINED));
-            }
-        });
+        underline.setOnClickListener(v -> mxText.underline(!mxText.contains(MXText.FORMAT_UNDERLINED)));
 
-        underline.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(EditNoteActivity.this, R.string.toast_underline, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        underline.setOnLongClickListener(v -> {
+            Toast.makeText(EditNoteActivity.this, R.string.toast_underline, Toast.LENGTH_SHORT).show();
+            return true;
         });
     }
 
     private void setupStrikethrough() {
-        ImageButton strikethrough = (ImageButton) findViewById(R.id.strikethrough);
+        ImageButton strikethrough = findViewById(R.id.strikethrough);
 
-        strikethrough.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mxText.strikethrough(!mxText.contains(MXText.FORMAT_STRIKETHROUGH));
-            }
-        });
+        strikethrough.setOnClickListener(v -> mxText.strikethrough(!mxText.contains(MXText.FORMAT_STRIKETHROUGH)));
 
-        strikethrough.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(EditNoteActivity.this, R.string.toast_strikethrough, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        strikethrough.setOnLongClickListener(v -> {
+            Toast.makeText(EditNoteActivity.this, R.string.toast_strikethrough, Toast.LENGTH_SHORT).show();
+            return true;
         });
     }
 
     private void setupBullet() {
-        ImageButton bullet = (ImageButton) findViewById(R.id.bullet);
+        ImageButton bullet = findViewById(R.id.bullet);
 
-        bullet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mxText.bullet(!mxText.contains(MXText.FORMAT_BULLET));
-            }
-        });
+        bullet.setOnClickListener(v -> mxText.bullet(!mxText.contains(MXText.FORMAT_BULLET)));
 
 
-        bullet.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(EditNoteActivity.this, R.string.toast_bullet, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        bullet.setOnLongClickListener(v -> {
+            Toast.makeText(EditNoteActivity.this, R.string.toast_bullet, Toast.LENGTH_SHORT).show();
+            return true;
         });
     }
 
     private void setupQuote() {
-        ImageButton quote = (ImageButton) findViewById(R.id.quote);
+        ImageButton quote = findViewById(R.id.quote);
 
-        quote.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mxText.quote(!mxText.contains(mxText.FORMAT_QUOTE));
-            }
-        });
+        quote.setOnClickListener(v -> mxText.quote(!mxText.contains(mxText.FORMAT_QUOTE)));
 
-        quote.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(EditNoteActivity.this, R.string.toast_quote, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        quote.setOnLongClickListener(v -> {
+            Toast.makeText(EditNoteActivity.this, R.string.toast_quote, Toast.LENGTH_SHORT).show();
+            return true;
         });
     }
 
     private void setupLink() {
-        ImageButton link = (ImageButton) findViewById(R.id.link);
+        ImageButton link = findViewById(R.id.link);
 
-        link.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //进入链接
-               // showLinkDialog();
-                //保存
-                Log.d("ttsl",EXAMPLE);
+        link.setOnClickListener(v -> {
+            //进入链接
+           // showLinkDialog();
+            //保存
+            Log.d("ttsl",EXAMPLE);
 
-            }
         });
 
-        link.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(EditNoteActivity.this, R.string.toast_insert_link, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        link.setOnLongClickListener(v -> {
+            Toast.makeText(EditNoteActivity.this, R.string.toast_insert_link, Toast.LENGTH_SHORT).show();
+            return true;
         });
     }
 
     private void setupClear() {
-        ImageButton clear = (ImageButton) findViewById(R.id.clear);
+        ImageButton clear = findViewById(R.id.clear);
 
-        clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //清除格式
-                mxText.clearFormats();
-            }
+        clear.setOnClickListener(v -> {
+            //清除格式
+            mxText.clearFormats();
         });
 
-        clear.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(EditNoteActivity.this, R.string.toast_format_clear, Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        clear.setOnLongClickListener(v -> {
+            Toast.makeText(EditNoteActivity.this, R.string.toast_format_clear, Toast.LENGTH_SHORT).show();
+            return true;
         });
     }
 
