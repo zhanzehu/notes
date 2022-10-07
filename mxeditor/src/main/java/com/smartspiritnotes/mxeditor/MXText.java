@@ -19,11 +19,13 @@ import android.util.AttributeSet;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MXText extends EditText implements TextWatcher {
+public class MXText extends androidx.appcompat.widget.AppCompatEditText implements TextWatcher {
     //设置粗体id
     public static final int FORMAT_BOLD = 0x01;
     //设置斜体id
@@ -75,10 +77,10 @@ public class MXText extends EditText implements TextWatcher {
         init(attrs);
     }
 
-    public MXText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init(attrs);
-    }
+//    public MXText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+//     //   super(context, attrs, defStyleAttr, defStyleRes);
+//        init(attrs);
+//    }
 
     private void init(AttributeSet attrs) {
         TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.MXText);

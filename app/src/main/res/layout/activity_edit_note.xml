@@ -62,14 +62,15 @@
                 android:background="?android:selectableItemBackground">
             </ImageButton>
 
-            <ImageButton android:id="@+id/quote"
-                android:contentDescription="@null"
+            <ImageButton
+                android:id="@+id/quote"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/ic_format_quote"
+                android:background="?android:selectableItemBackground"
+                android:contentDescription="@null"
                 android:scaleType="center"
-                android:background="?android:selectableItemBackground">
-            </ImageButton>
+                android:src="@drawable/ic_format_quote"
+           ></ImageButton>
 
             <ImageButton android:id="@+id/link"
                 android:contentDescription="@null"
