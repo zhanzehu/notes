@@ -6,6 +6,9 @@ import android.os.Parcel;
 import android.text.Layout;
 import android.text.style.QuoteSpan;
 
+/**
+ * 用于引用
+ */
 public class MXQuoteSpan extends QuoteSpan {
     private static final int DEFAULT_STRIPE_WIDTH = 2;
     private static final int DEFAULT_GAP_WIDTH = 2;

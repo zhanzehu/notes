@@ -6,6 +6,9 @@ import android.text.style.URLSpan;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 专门用于link的
+ */
 public class MXURLSpan extends URLSpan {
     private int linkColor = 0;
     private boolean linkUnderline = true;

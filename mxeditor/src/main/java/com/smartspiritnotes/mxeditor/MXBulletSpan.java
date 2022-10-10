@@ -8,6 +8,9 @@ import android.text.Layout;
 import android.text.Spanned;
 import android.text.style.BulletSpan;
 
+/**
+ * 设置序号
+ */
 public class MXBulletSpan extends BulletSpan {
     private static final int DEFAULT_COLOR = 0;
     private static final int DEFAULT_RADIUS = 3;

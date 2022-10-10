@@ -40,6 +40,9 @@ public class MXText extends androidx.appcompat.widget.AppCompatEditText implemen
     public static final int FORMAT_QUOTE = 0x06;
     //设置链接id
     public static final int FORMAT_LINK = 0x07;
+    //设置字号id
+    public static final int FORMAT_SIZE = 0x08;
+
 
     //初始化
     private int bulletColor = 0;
@@ -58,7 +61,7 @@ public class MXText extends androidx.appcompat.widget.AppCompatEditText implemen
     private boolean historyWorking = false;
     private int historyCursor = 0;
 
-    //
+    //格式
     private SpannableStringBuilder inputBefore;
     private Editable inputLast;
 
@@ -77,11 +80,10 @@ public class MXText extends androidx.appcompat.widget.AppCompatEditText implemen
         init(attrs);
     }
 
-//    public MXText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-//     //   super(context, attrs, defStyleAttr, defStyleRes);
-//        init(attrs);
-//    }
-
+    /**
+     *初始化，获取到res-values的样式attrs
+     * @param attrs
+     */
     private void init(AttributeSet attrs) {
         TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.MXText);
         bulletColor = array.getColor(R.styleable.MXText_bulletColor, 0);
@@ -132,6 +134,7 @@ public class MXText extends androidx.appcompat.widget.AppCompatEditText implemen
         }
     }
 
+    //设置格式
     protected void styleValid(int style, int start, int end) {
         switch (style) {
             case Typeface.NORMAL:
@@ -150,6 +153,7 @@ public class MXText extends androidx.appcompat.widget.AppCompatEditText implemen
         getEditableText().setSpan(new StyleSpan(style), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
+    //去掉格式
     protected void styleInvalid(int style, int start, int end) {
         switch (style) {
             case Typeface.NORMAL:
@@ -188,6 +192,7 @@ public class MXText extends androidx.appcompat.widget.AppCompatEditText implemen
         }
     }
 
+    //是否包含格式
     protected boolean containStyle(int style, int start, int end) {
         switch (style) {
             case Typeface.NORMAL:
@@ -830,6 +835,7 @@ public class MXText extends androidx.appcompat.widget.AppCompatEditText implemen
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 
+    //解析html格式
     public void fromHtml(String source) {
         SpannableStringBuilder builder = new SpannableStringBuilder();
         builder.append(MXParser.fromHtml(source));
@@ -837,6 +843,7 @@ public class MXText extends androidx.appcompat.widget.AppCompatEditText implemen
         setText(builder);
     }
 
+    //转换html格式
     public String toHtml() {
         return MXParser.toHtml(getEditableText());
     }
